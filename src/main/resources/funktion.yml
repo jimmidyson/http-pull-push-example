@@ -1,0 +1,10 @@
+flows:
+- steps:
+  - kind: endpoint
+    uri: periodic-timer
+  - kind: endpoint
+    uri: http-pull-push:http:localhost:8080/hello?httpMethod=GET
+  - kind: setBody
+    body: '{ "message": "iPaaS was here" }'
+  - kind: endpoint
+    uri: http-pull-push:http:localhost:8080/bye?httpMethod=POST

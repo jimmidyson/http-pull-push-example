@@ -16,7 +16,8 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -31,6 +32,7 @@
     <ipaas-connectors.version>0.1.0</ipaas-connectors.version>
     <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
     <camel.version>2.19.0-SNAPSHOT</camel.version>
+    <funktion.version>1.1.44</funktion.version>
   </properties>
 
   <repositories>
@@ -112,6 +114,18 @@
       <groupId>com.redhat.ipaas</groupId>
       <artifactId>http-connector</artifactId>
       <version>${ipaas-connectors.version}</version>
+    </dependency>
+
+    <!-- Funktion runtime -->
+    <dependency>
+      <groupId>io.fabric8.funktion</groupId>
+      <artifactId>funktion-model</artifactId>
+      <version>${funktion.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.fabric8.funktion</groupId>
+      <artifactId>funktion-runtime</artifactId>
+      <version>${funktion.version}</version>
     </dependency>
 
     <!-- testing -->
