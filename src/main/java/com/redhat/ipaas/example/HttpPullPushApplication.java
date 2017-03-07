@@ -15,11 +15,8 @@
  */
 package com.redhat.ipaas.example;
 
-import io.fabric8.funktion.runtime.FunktionRouteBuilder;
-import org.apache.camel.builder.RouteBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class HttpPullPushApplication {
@@ -31,9 +28,4 @@ public class HttpPullPushApplication {
         SpringApplication.run(HttpPullPushApplication.class, args);
     }
 
-    @Bean
-    public RouteBuilder funktionRouteBuilder() {
-        return new FunktionRouteBuilder();
-    }
 }
-

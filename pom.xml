@@ -32,7 +32,7 @@
     <ipaas-connectors.version>0.1.0</ipaas-connectors.version>
     <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
     <camel.version>2.19.0-SNAPSHOT</camel.version>
-    <funktion.version>1.1.44</funktion.version>
+    <funktion.version>1.1.53</funktion.version>
   </properties>
 
   <repositories>
