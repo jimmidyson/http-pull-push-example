@@ -1,10 +1,12 @@
+---
 flows:
 - steps:
   - kind: endpoint
-    uri: periodic-timer
+    uri: periodic-timer:every?period=5000
   - kind: endpoint
     uri: http-get:http:localhost:8080/hello
-  - kind: setBody
-    body: '{ "message": "iPaaS was here" }'
+  - kind: log
+    message: Hello world! ${body}
   - kind: endpoint
     uri: http-post:http:localhost:8080/bye
+
