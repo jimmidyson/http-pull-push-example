@@ -29,9 +29,9 @@
   <packaging>jar</packaging>
 
   <properties>
-    <ipaas-connectors.version>0.2.0</ipaas-connectors.version>
-    <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
-    <camel.version>2.19.0-SNAPSHOT</camel.version>
+    <ipaas-connectors.version>0.3.1</ipaas-connectors.version>
+    <spring-boot.version>1.4.5.RELEASE</spring-boot.version>
+    <camel.version>2.19.0.fuse-000031</camel.version>
     <funktion.version>1.0-SNAPSHOT</funktion.version>
   </properties>
 
@@ -43,6 +43,14 @@
       <id>ipaas-releases</id>
       <name>ipaas-releases</name>
       <url>https://dl.bintray.com/redhat-ipaas/maven/</url>
+    </repository>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>jboss.ea</id>
+      <name>JBoss EA</name>
+      <url>https://repository.jboss.org/nexus/content/groups/ea</url>
     </repository>
     <repository>
       <id>apache.snapshots</id>

@@ -4,9 +4,9 @@ flows:
   - kind: endpoint
     uri: periodic-timer:every?period=5000
   - kind: endpoint
-    uri: http-get:http:localhost:8080/hello
+    uri: http-get:hello
   - kind: log
     message: Hello world! ${body}
   - kind: endpoint
-    uri: http-post:http:localhost:8080/bye
+    uri: http-post:bye
 
