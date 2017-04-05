@@ -15,6 +15,9 @@
  */
 package com.redhat.ipaas.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,11 +26,12 @@ import org.springframework.web.bind.annotation.RestController;
  * Used for simulating a rest service which we can run locally inside Spring Boot
  */
 @RestController
-public class HelloRestController {
+public class ByeRestController {
 
-    @RequestMapping(value = "/myservice/hello", method = RequestMethod.GET, produces = "application/json")
-    public String hello() {
-        return "{ \"message\": \"Hello World\" }";
+    private static final Logger LOG = LoggerFactory.getLogger(ByeRestController.class);
+
+    @RequestMapping(value = "/myotherservice/bye", method = RequestMethod.POST, consumes = "application/json")
+    public void bye(@RequestBody String body) {
+        LOG.info("HTTP POST received: {}", body);
     }
-
 }
