@@ -21,7 +21,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.redhat.ipaas.examples</groupId>
+  <groupId>io.syndesis.examples</groupId>
   <artifactId>http-pull-push-example</artifactId>
   <version>0.1-SNAPSHOT</version>
   <name>iPaaS Connectors :: Http Pull Push Example</name>
@@ -29,49 +29,11 @@
   <packaging>jar</packaging>
 
   <properties>
-    <ipaas-connectors.version>0.3.1</ipaas-connectors.version>
-    <spring-boot.version>1.4.5.RELEASE</spring-boot.version>
-    <camel.version>2.19.0.fuse-000031</camel.version>
-    <funktion.version>1.0-SNAPSHOT</funktion.version>
+    <ipaas-connectors.version>0.4.4</ipaas-connectors.version>
+    <spring-boot.version>1.5.3.RELEASE</spring-boot.version>
+    <camel.version>2.19.0</camel.version>
+    <funktion.version>1.1.55</funktion.version>
   </properties>
-
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>ipaas-releases</id>
-      <name>ipaas-releases</name>
-      <url>https://dl.bintray.com/redhat-ipaas/maven/</url>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>jboss.ea</id>
-      <name>JBoss EA</name>
-      <url>https://repository.jboss.org/nexus/content/groups/ea</url>
-    </repository>
-    <repository>
-      <id>apache.snapshots</id>
-      <name>Apache Development Snapshot Repository</name>
-      <url>https://repository.apache.org/content/repositories/snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>jcenter-releases</id>
-      <name>jcenter</name>
-      <url>https://jcenter.bintray.com</url>
-    </repository>
-  </repositories>
 
   <dependencyManagement>
     <dependencies>
@@ -111,20 +73,24 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-opentracing-starter</artifactId>
+    </dependency>
 
     <!-- connectors used in this example -->
     <dependency>
-      <groupId>com.redhat.ipaas</groupId>
+      <groupId>io.syndesis</groupId>
       <artifactId>timer-connector</artifactId>
       <version>${ipaas-connectors.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.redhat.ipaas</groupId>
+      <groupId>io.syndesis</groupId>
       <artifactId>http-get-connector</artifactId>
       <version>${ipaas-connectors.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.redhat.ipaas</groupId>
+      <groupId>io.syndesis</groupId>
       <artifactId>http-post-connector</artifactId>
       <version>${ipaas-connectors.version}</version>
     </dependency>
@@ -140,6 +106,18 @@
       <artifactId>funktion-runtime</artifactId>
       <version>${funktion.version}</version>
     </dependency>
+
+    <!-- Tracing -->
+    <dependency>
+      <groupId>com.uber.jaeger</groupId>
+      <artifactId>jaeger-core</artifactId>
+      <version>0.19.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentracing</groupId>
+    <artifactId>opentracing-mock</artifactId>
+    <version>0.22.0</version>
+</dependency>
 
     <!-- testing -->
     <dependency>

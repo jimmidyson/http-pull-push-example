@@ -13,12 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.redhat.ipaas.example;
+package io.syndesis.example;
 
+import org.apache.camel.opentracing.starter.CamelOpenTracing;
 import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.uber.jaeger.Configuration;
+import io.opentracing.Tracer;
+import io.opentracing.mock.MockTracer;
 
 @SpringBootApplication
+@CamelOpenTracing
 public class HttpPullPushApplication {
 
     /**
@@ -26,6 +32,11 @@ public class HttpPullPushApplication {
      */
     public static void main(String[] args) {
         SpringApplication.run(HttpPullPushApplication.class, args);
+    }
+
+    @Bean
+    public Tracer tracer() {
+        return new MockTracer();
     }
 
 }
