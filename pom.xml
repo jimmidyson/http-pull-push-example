@@ -113,11 +113,6 @@
       <artifactId>jaeger-core</artifactId>
       <version>0.19.0</version>
     </dependency>
-    <dependency>
-    <groupId>io.opentracing</groupId>
-    <artifactId>opentracing-mock</artifactId>
-    <version>0.22.0</version>
-</dependency>
 
     <!-- testing -->
     <dependency>

@@ -21,7 +21,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.uber.jaeger.Configuration;
 import io.opentracing.Tracer;
-import io.opentracing.mock.MockTracer;
 
 @SpringBootApplication
 @CamelOpenTracing
@@ -36,7 +35,7 @@ public class HttpPullPushApplication {
 
     @Bean
     public Tracer tracer() {
-        return new MockTracer();
+        return Configuration.fromEnv().getTracer();
     }
 
 }
